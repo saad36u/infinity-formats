@@ -4,54 +4,41 @@
 /* ========== Light Theme (الافتراضي) ========= */
 /* ============================================ */
 :root {
-  /* الخلفيات */
   --bg-main: #faf8f5;
   --bg-footer: #f0ebe3;
   --gradient-edge: #faf8f5;
-  
-  /* النصوص */
   --text-main: #1a1a2e;
   --text-muted: #2d3748;
   --text-subtle: #4a5568;
-  
-  /* ===== الـ Overlays للصور - مخففة جداً عشان الصور تبان ===== */
-  --overlay-light: rgba(250, 248, 245, 0.35);   /* 35% - الصورة تبان بوضوح */
-  --overlay-medium: rgba(250, 248, 245, 0.45);  /* 45% - تبان أكثر من النص */
-  --overlay-modal: rgba(250, 248, 245, 0.98);   /* 98% - نافذة معتمة */
+  --overlay-light: rgba(250, 248, 245, 0.35);
+  --overlay-medium: rgba(250, 248, 245, 0.45);
+  --overlay-modal: rgba(250, 248, 245, 0.98);
   --overlay-modal-header: rgba(255, 255, 255, 0.98);
-  
-  /* الجلاس */
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-bg-strong: rgba(255, 255, 255, 0.92);
   --glass-border: rgba(139, 21, 56, 0.18);
   --border-color: rgba(0, 0, 0, 0.1);
-  
-  /* ===== فلتر الصور - يحافظ على الألوان الحقيقية ===== */
   --bg-filter: brightness(0.98) saturate(0.9) contrast(0.98) hue-rotate(-5deg);
 }
 
 /* ============================================ */
-/* ========== Dark Theme (كما هو) ============ */
+/* ========== Dark Theme ===================== */
 /* ============================================ */
 html.dark {
   --bg-main: #0b1120;
   --bg-footer: #0b1120;
   --gradient-edge: #0b1120;
-  
   --text-main: #ffffff;
   --text-muted: #cbd5e0;
   --text-subtle: #a0aec0;
-  
   --overlay-light: rgba(11, 17, 32, 0.25);
   --overlay-medium: rgba(11, 17, 32, 0.3);
   --overlay-modal: rgba(11, 17, 32, 0.95);
   --overlay-modal-header: rgba(11, 17, 32, 0.8);
-  
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-bg-strong: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.15);
   --border-color: rgba(255, 255, 255, 0.1);
-  
   --bg-filter: brightness(1.05) saturate(0.85) contrast(1.05) hue-rotate(-10deg);
 }
 
@@ -73,6 +60,33 @@ html.dark {
 }
 
 @layer utilities {
+  /* ========== أصناف النصوص ========== */
+  .text-main { color: var(--text-main); }
+  .text-muted { color: var(--text-muted); }
+  .text-subtle { color: var(--text-subtle); }
+
+  /* ========== أصناف الخلفيات ========== */
+  .bg-main { background-color: var(--bg-main); }
+  .bg-footer { background-color: var(--bg-footer); }
+  .bg-overlay-light { background-color: var(--overlay-light); }
+  .bg-overlay-medium { background-color: var(--overlay-medium); }
+  .bg-overlay-modal { background-color: var(--overlay-modal); }
+  .bg-overlay-modal-header { background-color: var(--overlay-modal-header); }
+
+  /* ========== أصناف الحدود ========== */
+  .border-main { border-color: var(--border-color); }
+  .border-glass { border-color: var(--glass-border); }
+
+  /* ========== أصناف التدرجات ========== */
+  .from-edge {
+    --tw-gradient-from: var(--gradient-edge) var(--tw-gradient-from-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  .to-edge {
+    --tw-gradient-to: var(--gradient-edge) var(--tw-gradient-to-position);
+  }
+
+  /* ========== تأثيرات زجاجية ========== */
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -95,36 +109,5 @@ html.dark {
   
   .glow-gold {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), 0 0 40px rgba(212, 175, 55, 0.1);
-  }
-
-  /* ========== ظل أبيض قوي للنصوص في الوضع الفاتح ========== */
-  .text-shadow-light {
-    text-shadow: 
-      0 1px 2px rgba(255, 255, 255, 1),
-      0 2px 6px rgba(255, 255, 255, 0.95),
-      0 4px 12px rgba(255, 255, 255, 0.9),
-      0 0 30px rgba(255, 255, 255, 0.8);
-  }
-
-  /* ========== ظل داكن قوي للنصوص في الوضع الداكن ========== */
-  .text-shadow-dark {
-    text-shadow: 
-      0 2px 8px rgba(0, 0, 0, 0.8),
-      0 4px 16px rgba(0, 0, 0, 0.6),
-      0 0 30px rgba(0, 0, 0, 0.4);
-  }
-
-  /* ========== حاوية البطاقات الشفافة في الوضع الفاتح ========== */
-  .light-card {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 2px solid rgba(139, 21, 56, 0.15);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  html.dark .light-card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.15);
   }
 }
