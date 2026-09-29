@@ -390,7 +390,8 @@ function App() {
               </a>
               
               <a
-                href="https://t.me/InfinityFormats1111111"
+                href="https://t.me/InfinityFormats2"
+              
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-white/90 dark:bg-white/10 backdrop-blur-md px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg text-[var(--text-main)] border-2 border-[#8B1538]/40 dark:border-[#D4AF37]/40 hover:border-[#8B1538] dark:hover:border-[#D4AF37] transition-all duration-300 hover:scale-105 flex items-center gap-3 w-full sm:w-auto justify-center shadow-lg"
@@ -801,7 +802,7 @@ function App() {
               </a>
 
               <a
-                href="https://t.me/InfinityFormats1111111"
+                href="https://t.me/InfinityFormats2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group glass-strong p-5 sm:p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-2 border-[var(--glass-border)] hover:border-[#0088cc] relative overflow-hidden shadow-2xl"
